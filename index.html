@@ -23,7 +23,7 @@
 <body>
   <nav><a href="home.html">BettorKit</a> · <a href="terms.html">Terms of use</a> · <a href="support.html">Support</a></nav>
   <h1>BettorKit Privacy Policy</h1>
-  <p class="updated">Last updated: October 6, 2026</p>
+  <p class="updated">Last updated: October 17, 2026</p>
 
   <p>
     This Privacy Policy explains how BettorKit, developed and operated by
@@ -38,8 +38,8 @@
   <h2>1. About BettorKit</h2>
   <p>
     BettorKit is a mathematical and informational application for managing
-    betting bankrolls, recording bets, simulating staking strategies, reviewing
-    sports information and comparing odds. BettorKit does not accept or place
+    betting bankrolls, recording bets, simulating staking strategies and
+    calculating scenarios using information entered by the user. BettorKit does not accept or place
     bets, process gambling transactions or guarantee profits.
   </p>
 
@@ -51,7 +51,8 @@
     <li>An email address and basic account information when the user voluntarily links a guest account with email, Google or Apple.</li>
     <li>Subscription product identifiers, transaction identifiers or verification tokens, purchase status, expiry, revocation status and entitlement information supplied by Apple App Store or Google Play. BettorKit does not receive or store payment card details.</li>
     <li>Technical information required for authentication, synchronization, security and reliable communication with backend services, such as application version, request information and security or network logs.</li>
-    <li>Sports, competition and match identifiers required to retrieve fixtures, results, statistics and available odds.</li>
+    <li>Shared Masaniello cycle records, participant identifiers and roles, invitation records, permissions, bet proposals, recorded outcomes and activity/read status when the user uses shared features.</li>
+    <li>Installation identifiers and messaging registration tokens used by Firebase services. When shared push notifications are enabled, BettorKit also processes a device registration identifier, platform, language and notification preferences to deliver updates.</li>
   </ul>
 
   <h2>3. Local information and selected images</h2>
@@ -75,6 +76,29 @@
   <p>
     Users may begin with an anonymous guest account and may later link that
     account to email, Google or Apple where those options are available.
+    New and returning users can also sign in from the initial account screen.
+    Email sign-in uses a passwordless link or one-time authentication.
+  </p>
+
+  <h2>Shared Masaniello and notifications</h2>
+  <p>
+    Sharing is initiated by users through an invitation code. The owner and an
+    authorized participant can access the shared cycle information necessary
+    for their roles, including proposals, recorded bets, outcomes and activity.
+    Sharing a cycle does not give the other participant access to unrelated
+    private bankrolls or account records. The owner can change permissions or
+    revoke access. Information a participant has already viewed may remain in
+    that participant's possession.
+  </p>
+  <p>
+    Shared push notifications use Google Firebase Cloud Messaging and, on iOS,
+    Apple Push Notification service. Notification delivery is optional and can
+    be controlled in the app and in device settings. Push messages use generic
+    update text and identifiers for opening the relevant activity; bet details,
+    balances and invitation codes are not included in the notification payload.
+    Firebase installation identifiers and service metadata may also be processed
+    as part of initializing the messaging services. BettorKit does not use these
+    identifiers for advertising.
   </p>
 
   <h2>Google sign-in information</h2>
@@ -102,7 +126,8 @@
     <li>provide bankroll, betting history and strategy functionality;</li>
     <li>calculate statistics, simulations and performance indicators;</li>
     <li>synchronize and restore supported data;</li>
-    <li>retrieve sports information and odds;</li>
+    <li>operate user-requested shared cycles, permissions, proposals and activity history;</li>
+    <li>deliver requested activity notifications and maintain notification preferences;</li>
     <li>verify, manage and restore subscriptions;</li>
     <li>protect the service, prevent abuse and diagnose technical problems;</li>
     <li>respond to support, privacy and deletion requests.</li>
@@ -113,7 +138,7 @@
   <ul>
     <li>Supabase for authentication, database, synchronization and backend services;</li>
     <li>Apple App Store and Google Play for application distribution, purchases, subscription management and transaction verification;</li>
-    <li>sports data providers for fixtures, scores, statistics and odds;</li>
+    <li>Google Firebase for messaging and installation services, and Apple Push Notification service for iOS notification delivery;</li>
     <li>Google and Apple when users choose their respective account sign-in services.</li>
   </ul>
   <p>
@@ -140,6 +165,16 @@
     deletion removes the Supabase authentication identity and the associated
     profile, settings, bankrolls, strategies, recorded bets, synchronization data,
     subscription entitlements and private purchase-verification records.
+  </p>
+  <p>
+    If a shared-cycle owner has open bets, pending transfers or reserved funds,
+    these operations must first be resolved in the app before account deletion
+    can complete; deletion does not settle bets or transfer ownership
+    automatically. Deleting the owner's account removes the shared cycles
+    owned by that account. Deleting a participant's account does not erase the
+    owner's separate ledger or bets. Related shared records are handled under
+    the database's access and deletion rules. Users may contact support for
+    help with a deletion that cannot complete.
   </p>
   <p>
     BettorKit currently uses the Supabase Free Plan. BettorKit does not maintain
